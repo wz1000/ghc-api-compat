@@ -118,7 +118,6 @@ library
       , GHC.Compiler.HaskellToCore.Match.Expression                     as  PmExpr
       , GHC.Compiler.HaskellToCore.Match.Literal                        as  MatchLit
       , GHC.Compiler.HaskellToCore.Match.TermEqOracle                   as  TmOracle
-      , GHC.Compiler.HaskellToCore.Match.TermEqOracle                   as  TmOracle
       , GHC.Compiler.HaskellToCore.Monad                                as  DsMonad
       , GHC.Compiler.HaskellToCore.Splice                               as  DsMeta
       , GHC.Compiler.HaskellToCore.Usage                                as  DsUsage
@@ -250,7 +249,7 @@ library
       , GHC.IR.Cmm.Transformer.Sinker                                   as  CmmSink
       , GHC.IR.Cmm.Transformer.Switch                                   as  CmmSwitch
       , GHC.IR.Cmm.Transformer.Switch.Implement                         as  CmmImplementSwitchPlans
-      , GHC.IR.Cmm.Transformer.Utils                                    as  CmmUtils
+      , GHC.IR.Cmm.Utils                                                as  CmmUtils
       , GHC.IR.Core.Analyser.Arity                                      as  CoreArity
       , GHC.IR.Core.Analyser.CallArity                                  as  CallArity
       , GHC.IR.Core.Analyser.Demand                                     as  DmdAnal
