@@ -409,7 +409,7 @@ library
       , GHC.Types.Coercion                                              as  Coercion
       , GHC.Types.Coercion.Axiom                                        as  CoAxiom
       , GHC.Types.Coercion.Optimise                                     as  OptCoercion
-      , GHC.Types.ConstructorLike                                       as  ConLike
+      , GHC.Types.ConLike                                               as  ConLike
       , GHC.Types.CostCentre                                            as  CostCentre
       , GHC.Types.CostCentre.Init                                       as  ProfInit
       , GHC.Types.DataCon                                               as  DataCon
@@ -444,6 +444,7 @@ library
       , GHC.Types.Var.Set                                               as  VarSet
       , GHC.Types.Var.UndirectedGraph                                   as  UnVarGraph
       , GHC.Utils                                                       as  Util
+      , GHC.Utils.Assembler                                             as  AsmUtils
       , GHC.Utils.Binary                                                as  Binary
       , GHC.Utils.Binary.Fingerprint                                    as  BinFingerprint
       , GHC.Utils.CodeGen.Platform.ARM64                                as  CodeGen.Platform.ARM64
