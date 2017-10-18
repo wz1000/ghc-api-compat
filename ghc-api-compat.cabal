@@ -27,7 +27,7 @@ library
       , GHC.Builtin.TypeNats                                            as  TcTypeNats
       , GHC.Builtin.Types                                               as  TysWiredIn
       , GHC.Builtin.Uniques                                             as  KnownUniques
-      , GHC.Builtin.Utils                                               as  PrelInfo
+      , GHC.Builtin.Util                                                as  PrelInfo
       , GHC.ByteCode.Assembler                                          as  ByteCodeAsm
       , GHC.ByteCode.InfoTable                                          as  ByteCodeItbls
       , GHC.ByteCode.Instruction                                        as  ByteCodeInstr
@@ -81,27 +81,27 @@ library
       , GHC.CmmToAsm.PPC.RegInfo                                        as  PPC.RegInfo
       , GHC.CmmToAsm.PPC.Regs                                           as  PPC.Regs
       , GHC.CmmToAsm.PrettyPrint                                        as  PprBase
-      , GHC.CmmToAsm.Register.Allocator.Graph.ArchBase                  as  RegAlloc.Graph.ArchBase
-      , GHC.CmmToAsm.Register.Allocator.Graph.ArchX86                   as  RegAlloc.Graph.ArchX86
-      , GHC.CmmToAsm.Register.Allocator.Graph.Coalesce                  as  RegAlloc.Graph.Coalesce
-      , GHC.CmmToAsm.Register.Allocator.Graph.Main                      as  RegAlloc.Graph.Main
-      , GHC.CmmToAsm.Register.Allocator.Graph.Spill                     as  RegAlloc.Graph.Spill
-      , GHC.CmmToAsm.Register.Allocator.Graph.SpillClean                as  RegAlloc.Graph.SpillClean
-      , GHC.CmmToAsm.Register.Allocator.Graph.SpillCost                 as  RegAlloc.Graph.SpillCost
-      , GHC.CmmToAsm.Register.Allocator.Graph.Stats                     as  RegAlloc.Graph.Stats
-      , GHC.CmmToAsm.Register.Allocator.Graph.TrivColorable             as  RegAlloc.Graph.TrivColorable
-      , GHC.CmmToAsm.Register.Allocator.Linear.Base                     as  RegAlloc.Linear.Base
-      , GHC.CmmToAsm.Register.Allocator.Linear.FreeRegs                 as  RegAlloc.Linear.FreeRegs
-      , GHC.CmmToAsm.Register.Allocator.Linear.JoinToTargets            as  RegAlloc.Linear.JoinToTargets
-      , GHC.CmmToAsm.Register.Allocator.Linear.Main                     as  RegAlloc.Linear.Main
-      , GHC.CmmToAsm.Register.Allocator.Linear.PPC.FreeRegs             as  RegAlloc.Linear.PPC.FreeRegs
-      , GHC.CmmToAsm.Register.Allocator.Linear.SPARC.FreeRegs           as  RegAlloc.Linear.SPARC.FreeRegs
-      , GHC.CmmToAsm.Register.Allocator.Linear.StackMap                 as  RegAlloc.Linear.StackMap
-      , GHC.CmmToAsm.Register.Allocator.Linear.State                    as  RegAlloc.Linear.State
-      , GHC.CmmToAsm.Register.Allocator.Linear.Stats                    as  RegAlloc.Linear.Stats
-      , GHC.CmmToAsm.Register.Allocator.Linear.X86_64.FreeRegs          as  RegAlloc.Linear.X86_64.FreeRegs
-      , GHC.CmmToAsm.Register.Allocator.Linear.X86.FreeRegs             as  RegAlloc.Linear.X86.FreeRegs
-      , GHC.CmmToAsm.Register.Allocator.Liveness                        as  RegAlloc.Liveness
+      , GHC.CmmToAsm.RegAlloc.Graph.ArchBase                            as  RegAlloc.Graph.ArchBase
+      , GHC.CmmToAsm.RegAlloc.Graph.ArchX86                             as  RegAlloc.Graph.ArchX86
+      , GHC.CmmToAsm.RegAlloc.Graph.Coalesce                            as  RegAlloc.Graph.Coalesce
+      , GHC.CmmToAsm.RegAlloc.Graph.Main                                as  RegAlloc.Graph.Main
+      , GHC.CmmToAsm.RegAlloc.Graph.Spill                               as  RegAlloc.Graph.Spill
+      , GHC.CmmToAsm.RegAlloc.Graph.SpillClean                          as  RegAlloc.Graph.SpillClean
+      , GHC.CmmToAsm.RegAlloc.Graph.SpillCost                           as  RegAlloc.Graph.SpillCost
+      , GHC.CmmToAsm.RegAlloc.Graph.Stats                               as  RegAlloc.Graph.Stats
+      , GHC.CmmToAsm.RegAlloc.Graph.TrivColorable                       as  RegAlloc.Graph.TrivColorable
+      , GHC.CmmToAsm.RegAlloc.Linear.Base                               as  RegAlloc.Linear.Base
+      , GHC.CmmToAsm.RegAlloc.Linear.FreeRegs                           as  RegAlloc.Linear.FreeRegs
+      , GHC.CmmToAsm.RegAlloc.Linear.JoinToTargets                      as  RegAlloc.Linear.JoinToTargets
+      , GHC.CmmToAsm.RegAlloc.Linear.Main                               as  RegAlloc.Linear.Main
+      , GHC.CmmToAsm.RegAlloc.Linear.PPC.FreeRegs                       as  RegAlloc.Linear.PPC.FreeRegs
+      , GHC.CmmToAsm.RegAlloc.Linear.SPARC.FreeRegs                     as  RegAlloc.Linear.SPARC.FreeRegs
+      , GHC.CmmToAsm.RegAlloc.Linear.StackMap                           as  RegAlloc.Linear.StackMap
+      , GHC.CmmToAsm.RegAlloc.Linear.State                              as  RegAlloc.Linear.State
+      , GHC.CmmToAsm.RegAlloc.Linear.Stats                              as  RegAlloc.Linear.Stats
+      , GHC.CmmToAsm.RegAlloc.Linear.X86_64.FreeRegs                    as  RegAlloc.Linear.X86_64.FreeRegs
+      , GHC.CmmToAsm.RegAlloc.Linear.X86.FreeRegs                       as  RegAlloc.Linear.X86.FreeRegs
+      , GHC.CmmToAsm.RegAlloc.Liveness                                  as  RegAlloc.Liveness
       , GHC.CmmToAsm.Register                                           as  Reg
       , GHC.CmmToAsm.Register.Class                                     as  RegClass
       , GHC.CmmToAsm.Register.Target                                    as  TargetReg
@@ -137,7 +137,7 @@ library
       , GHC.CmmToLlvm.CodeGen.Proc                                      as  LlvmCodeGen.CodeGen
       , GHC.CmmToLlvm.CodeGen.Regs                                      as  LlvmCodeGen.Regs
       , GHC.CmmToLlvm.Fixup                                             as  LlvmMangler
-      , GHC.Cmm.Utils                                                   as  CmmUtils
+      , GHC.Cmm.Util                                                    as  CmmUtils
       , GHC.Config.Constants                                            as  Constants
       , GHC.Config.Flags                                                as  DynFlags
       , GHC.Config.Flags.Fingerprint                                    as  FlagChecker
@@ -165,7 +165,7 @@ library
       , GHC.Core.Simplify                                               as  Simplify
       , GHC.Core.Simplify.Environment                                   as  SimplEnv
       , GHC.Core.Simplify.Monad                                         as  SimplMonad
-      , GHC.Core.Simplify.Utils                                         as  SimplUtils
+      , GHC.Core.Simplify.Util                                          as  SimplUtils
       , GHC.Core.Specialise                                             as  Specialise
       , GHC.Core.Specialise.Constructor                                 as  SpecConstr
       , GHC.Core.StaticArgument                                         as  SAT
@@ -221,7 +221,7 @@ library
       , GHC.CoreTypes.Var.Free                                          as  FV
       , GHC.CoreTypes.Var.Set                                           as  VarSet
       , GHC.CoreTypes.Var.UndirectedGraph                               as  UnVarGraph
-      , GHC.Core.Utils                                                  as  CoreUtils
+      , GHC.Core.Util                                                   as  CoreUtils
       , GHC.Core.Vectorise                                              as  Vectorise
       , GHC.Core.Vectorise.Builtins                                     as  Vectorise.Builtins
       , GHC.Core.Vectorise.Builtins.Base                                as  Vectorise.Builtins.Base
@@ -243,15 +243,15 @@ library
       , GHC.Core.Vectorise.Type.Env                                     as  Vectorise.Type.Env
       , GHC.Core.Vectorise.Type.TyConDecl                               as  Vectorise.Type.TyConDecl
       , GHC.Core.Vectorise.Type.Type                                    as  Vectorise.Type.Type
-      , GHC.Core.Vectorise.Utils                                        as  Vectorise.Utils
-      , GHC.Core.Vectorise.Utils.Base                                   as  Vectorise.Utils.Base
-      , GHC.Core.Vectorise.Utils.Closure                                as  Vectorise.Utils.Closure
-      , GHC.Core.Vectorise.Utils.Hoisting                               as  Vectorise.Utils.Hoisting
-      , GHC.Core.Vectorise.Utils.PADict                                 as  Vectorise.Utils.PADict
-      , GHC.Core.Vectorise.Utils.Poly                                   as  Vectorise.Utils.Poly
+      , GHC.Core.Vectorise.Util                                         as  Vectorise.Utils
+      , GHC.Core.Vectorise.Util.Base                                    as  Vectorise.Utils.Base
+      , GHC.Core.Vectorise.Util.Closure                                 as  Vectorise.Utils.Closure
+      , GHC.Core.Vectorise.Util.Hoisting                                as  Vectorise.Utils.Hoisting
+      , GHC.Core.Vectorise.Util.PADict                                  as  Vectorise.Utils.PADict
+      , GHC.Core.Vectorise.Util.Poly                                    as  Vectorise.Utils.Poly
       , GHC.Core.Vectorise.Var                                          as  Vectorise.Var
       , GHC.Core.WorkerWrap                                             as  WorkWrap
-      , GHC.Core.WorkerWrap.Utils                                       as  WwLib
+      , GHC.Core.WorkerWrap.Util                                        as  WwLib
       , GHC.Data.Bag                                                    as  Bag
       , GHC.Data.Bitmap                                                 as  Bitmap
       , GHC.Data.BoolFormula                                            as  BooleanFormula
@@ -296,12 +296,12 @@ library
       , GHC.Haskell.Derive.Functor                                      as  TcGenFunctor
       , GHC.Haskell.Derive.Generic                                      as  TcGenGenerics
       , GHC.Haskell.Derive.Typeable                                     as  TcTypeable
-      , GHC.Haskell.Derive.Utils                                        as  TcDerivUtils
+      , GHC.Haskell.Derive.Util                                         as  TcDerivUtils
       , GHC.Haskell.Lexer                                               as  Lexer
       , GHC.Haskell.Parser                                              as  Parser
       , GHC.Haskell.Parser.HeaderInfo                                   as  HeaderInfo
       , GHC.Haskell.Parser.Syntax                                       as  RdrHsSyn
-      , GHC.Haskell.Parser.Utils                                        as  HaddockUtils
+      , GHC.Haskell.Parser.Util                                         as  HaddockUtils
       , GHC.Haskell.Printer.Dump                                        as  HsDumpAst
       , GHC.Haskell.Rename                                              as  RnSource
       , GHC.Haskell.Rename.Bind                                         as  RnBinds
@@ -313,21 +313,21 @@ library
       , GHC.Haskell.Rename.Pattern                                      as  RnPat
       , GHC.Haskell.Rename.Splice                                       as  RnSplice
       , GHC.Haskell.Rename.Type                                         as  RnTypes
-      , GHC.Haskell.Rename.Utils                                        as  RnUtils
-      , GHC.Haskell.Rename.Utils.Unbound                                as  RnUnbound
+      , GHC.Haskell.Rename.Util                                         as  RnUtils
+      , GHC.Haskell.Rename.Util.Unbound                                 as  RnUnbound
       , GHC.Haskell.Stats                                               as  HscStats
-      , GHC.Haskell.Syntax.Annotation                                   as  ApiAnnotation
-      , GHC.Haskell.Syntax                                              as  HsSyn
-      , GHC.Haskell.Syntax.Bind                                         as  HsBinds
-      , GHC.Haskell.Syntax.Declaration                                  as  HsDecls
-      , GHC.Haskell.Syntax.Documentation                                as  HsDoc
-      , GHC.Haskell.Syntax.Expression                                   as  HsExpr
-      , GHC.Haskell.Syntax.Extension                                    as  HsExtension
-      , GHC.Haskell.Syntax.ImportExport                                 as  HsImpExp
-      , GHC.Haskell.Syntax.Literal                                      as  HsLit
-      , GHC.Haskell.Syntax.Pattern                                      as  HsPat
-      , GHC.Haskell.Syntax.PlaceHolder                                  as  PlaceHolder
-      , GHC.Haskell.Syntax.Type                                         as  HsTypes
+      , GHC.Syntax.Annotation                                           as  ApiAnnotation
+      , GHC.Syntax                                                      as  HsSyn
+      , GHC.Syntax.Bind                                                 as  HsBinds
+      , GHC.Syntax.Declaration                                          as  HsDecls
+      , GHC.Syntax.Documentation                                        as  HsDoc
+      , GHC.Syntax.Expression                                           as  HsExpr
+      , GHC.Syntax.Extension                                            as  HsExtension
+      , GHC.Syntax.ImportExport                                         as  HsImpExp
+      , GHC.Syntax.Literal                                              as  HsLit
+      , GHC.Syntax.Pattern                                              as  HsPat
+      , GHC.Syntax.PlaceHolder                                          as  PlaceHolder
+      , GHC.Syntax.Type                                                 as  HsTypes
       , GHC.Haskell.Template                                            as  Convert
       , GHC.HaskellToCore.Arrow                                         as  DsArrows
       , GHC.HaskellToCore                                               as  Desugar
@@ -347,50 +347,50 @@ library
       , GHC.HaskellToCore.Monad                                         as  DsMonad
       , GHC.HaskellToCore.Splice                                        as  DsMeta
       , GHC.HaskellToCore.Usage                                         as  DsUsage
-      , GHC.HaskellToCore.Utils                                         as  DsUtils
-      , GHC.Haskell.TypeCheck.Annotation                                as  TcAnnotations
-      , GHC.Haskell.TypeCheck.Arrow                                     as  TcArrows
-      , GHC.Haskell.TypeCheck.Bind                                      as  TcBinds
-      , GHC.Haskell.TypeCheck.Class                                     as  TcClassDcl
-      , GHC.Haskell.TypeCheck.Default                                   as  TcDefaults
-      , GHC.Haskell.TypeCheck.Deriving                                  as  TcDeriv
-      , GHC.Haskell.TypeCheck.Environment                               as  TcEnv
-      , GHC.Haskell.TypeCheck.Error                                     as  TcErrors
-      , GHC.Haskell.TypeCheck.Evidence                                  as  TcEvidence
-      , GHC.Haskell.TypeCheck.Export                                    as  TcRnExports
-      , GHC.Haskell.TypeCheck.Expression                                as  TcExpr
-      , GHC.Haskell.TypeCheck.FamilyInstance                            as  FamInst
-      , GHC.Haskell.TypeCheck.Foreign                                   as  TcForeign
-      , GHC.Haskell.TypeCheck.FunctionalDependency                      as  FunDeps
-      , GHC.Haskell.TypeCheck.Instance                                  as  TcInstDcls
-      , GHC.Haskell.TypeCheck.Instantiation                             as  Inst
-      , GHC.Haskell.TypeCheck.Match                                     as  TcMatches
-      , GHC.Haskell.TypeCheck.Module                                    as  TcRnDriver
-      , GHC.Haskell.TypeCheck.ModuleSignature                           as  TcBackpack
-      , GHC.Haskell.TypeCheck.Monad                                     as  TcRnMonad
-      , GHC.Haskell.TypeCheck.Pattern                                   as  TcPat
-      , GHC.Haskell.TypeCheck.PatternSynonym                            as  TcPatSyn
-      , GHC.Haskell.TypeCheck.Rule                                      as  TcRules
-      , GHC.Haskell.TypeCheck.Signature                                 as  TcSigs
-      , GHC.Haskell.TypeCheck.Simplify                                  as  TcSimplify
-      , GHC.Haskell.TypeCheck.Solver.Canonicalise                       as  TcCanonical
-      , GHC.Haskell.TypeCheck.Solver.Flatten                            as  TcFlatten
-      , GHC.Haskell.TypeCheck.Solver.Interact                           as  TcInteract
-      , GHC.Haskell.TypeCheck.Solver.Monad                              as  TcSMonad
-      , GHC.Haskell.TypeCheck.Splice                                    as  TcSplice
-      , GHC.Haskell.TypeCheck.Syntax                                    as  TcHsSyn
-      , GHC.Haskell.TypeCheck.Type                                      as  TcHsType
-      , GHC.Haskell.TypeCheck.TypeDecl                                  as  TcTyClsDecls
-      , GHC.Haskell.TypeCheck.TypeDeclUtil                              as  TcTyDecls
-      , GHC.Haskell.TypeCheck.Unify                                     as  TcUnify
-      , GHC.Haskell.TypeCheck.Util                                      as  TcRnTypes
-      , GHC.Haskell.TypeCheck.Util.CoreType                             as  TcType
-      , GHC.Haskell.TypeCheck.Util.Monadic                              as  TcMType
-      , GHC.Haskell.TypeCheck.Validity                                  as  TcValidity
-      , GHC.Haskell.Utils                                               as  HsUtils
+      , GHC.HaskellToCore.Util                                          as  DsUtils
+      , GHC.TypeCheck.Annotation                                        as  TcAnnotations
+      , GHC.TypeCheck.Arrow                                             as  TcArrows
+      , GHC.TypeCheck.Bind                                              as  TcBinds
+      , GHC.TypeCheck.Class                                             as  TcClassDcl
+      , GHC.TypeCheck.Default                                           as  TcDefaults
+      , GHC.TypeCheck.Deriving                                          as  TcDeriv
+      , GHC.TypeCheck.Environment                                       as  TcEnv
+      , GHC.TypeCheck.Error                                             as  TcErrors
+      , GHC.TypeCheck.Evidence                                          as  TcEvidence
+      , GHC.TypeCheck.Export                                            as  TcRnExports
+      , GHC.TypeCheck.Expression                                        as  TcExpr
+      , GHC.TypeCheck.FamilyInstance                                    as  FamInst
+      , GHC.TypeCheck.Foreign                                           as  TcForeign
+      , GHC.TypeCheck.FunctionalDependency                              as  FunDeps
+      , GHC.TypeCheck.Instance                                          as  TcInstDcls
+      , GHC.TypeCheck.Instantiation                                     as  Inst
+      , GHC.TypeCheck.Match                                             as  TcMatches
+      , GHC.TypeCheck.Module                                            as  TcRnDriver
+      , GHC.TypeCheck.ModuleSignature                                   as  TcBackpack
+      , GHC.TypeCheck.Monad                                             as  TcRnMonad
+      , GHC.TypeCheck.Pattern                                           as  TcPat
+      , GHC.TypeCheck.PatternSynonym                                    as  TcPatSyn
+      , GHC.TypeCheck.Rule                                              as  TcRules
+      , GHC.TypeCheck.Signature                                         as  TcSigs
+      , GHC.TypeCheck.Simplify                                          as  TcSimplify
+      , GHC.TypeCheck.Solver.Canonicalise                               as  TcCanonical
+      , GHC.TypeCheck.Solver.Flatten                                    as  TcFlatten
+      , GHC.TypeCheck.Solver.Interact                                   as  TcInteract
+      , GHC.TypeCheck.Solver.Monad                                      as  TcSMonad
+      , GHC.TypeCheck.Splice                                            as  TcSplice
+      , GHC.TypeCheck.Syntax                                            as  TcHsSyn
+      , GHC.TypeCheck.Type                                              as  TcHsType
+      , GHC.TypeCheck.TypeDecl                                          as  TcTyClsDecls
+      , GHC.TypeCheck.TypeDeclUtil                                      as  TcTyDecls
+      , GHC.TypeCheck.Unify                                             as  TcUnify
+      , GHC.TypeCheck.Util                                              as  TcRnTypes
+      , GHC.TypeCheck.Util.CoreType                                     as  TcType
+      , GHC.TypeCheck.Util.Monadic                                      as  TcMType
+      , GHC.TypeCheck.Validity                                          as  TcValidity
+      , GHC.Haskell.Util                                                as  HsUtils
       , GHC.Interactive.ClosureInspect                                  as  RtClosureInspect
       , GHC.Interactive.Debugger                                        as  Debugger
-      , GHC.Interactive.Debugger.Utils                                  as  DebuggerUtils
+      , GHC.Interactive.Debugger.Util                                   as  DebuggerUtils
       , GHC.Interactive.DynamicLoading                                  as  DynamicLoading
       , GHC.Interactive.Eval                                            as  InteractiveEval
       , GHC.Interactive.Interpreter                                     as  GHCi
@@ -405,7 +405,7 @@ library
       , GHC.Interface.Tidy                                              as  TidyPgm
       , GHC.Interface.Type                                              as  IfaceType
       , GHC.Interface.TypeCheck                                         as  TcIface
-      , GHC.Interface.Utils                                             as  MkIface
+      , GHC.Interface.Util                                              as  MkIface
       , GHC.Llvm.MetaData                                               as  Llvm.MetaData
       , GHC.Llvm.Printer                                                as  Llvm.PpLlvm
       , GHC.Llvm.Syntax                                                 as  Llvm.AbsSyn
@@ -440,9 +440,9 @@ library
       , GHC.StgToCmm.PrimOp                                             as  StgCmmPrim
       , GHC.StgToCmm.Profiling                                          as  StgCmmProf
       , GHC.StgToCmm.Profiling.Ticky                                    as  StgCmmTicky
-      , GHC.StgToCmm.Utils                                              as  StgCmmUtils
+      , GHC.StgToCmm.Util                                               as  StgCmmUtils
       , GHC.Stg.Unarise                                                 as  UnariseStg
-      , GHC.Stg.Utils                                                   as  CgUtils
+      , GHC.Stg.Util                                                    as  CgUtils
       , GHC.Util                                                        as  Util
       , GHC.Util.Assembler                                              as  AsmUtils
       , GHC.Util.Binary                                                 as  Binary
@@ -479,3 +479,7 @@ library
       , GHC.Util.PrettyPrint.TyThing                                    as  PprTyThing
       , GHC.Util.SysTools                                               as  SysTools
       , GHC.Util.SysTools.Terminal                                      as  SysTools.Terminal
+      , GHC.Util.SysTools.ExtraObj                                      as  SysTools.ExtraObj
+      , GHC.Util.SysTools.Info                                          as  SysTools.Info
+      , GHC.Util.SysTools.Process                                       as  SysTools.Process
+      , GHC.Util.SysTools.Tasks                                         as  SysTools.Tasks
