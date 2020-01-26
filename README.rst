@@ -1,8 +1,7 @@
 ghc-api-compat
 ==============
 
-We are in the process of [renaming GHC
-modules](https://gitlab.haskell.org/ghc/ghc/issues/13009).
+We are in the process of `renaming GHC modules <https://gitlab.haskell.org/ghc/ghc/issues/13009>`_.
 
 This package aims to make the transition easier by mapping old module names to
 newer module names.
