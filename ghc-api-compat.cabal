@@ -9,19 +9,18 @@ maintainer:          sylvain@haskus.fr
 -- copyright:
 category:            Development
 build-type:          Simple
-extra-source-files:  ChangeLog.md
 cabal-version:       >=1.22
 
 library
    build-depends:
-      ghc >= 8.10
+      ghc >= 8.11
    hs-source-dirs:      src
    default-language:    Haskell2010
 
    reexported-modules:
 
-        GHC.Hs.Annotation              as ApiAnnotation
-      , GHC.Hs.Binds                   as HsBinds
+--        GHC.Hs.Annotation              as ApiAnnotation
+        GHC.Hs.Binds                   as HsBinds
       , GHC.Hs.Decls                   as HsDecls
       , GHC.Hs.Doc                     as HsDoc
       , GHC.Hs.Dump                    as HsDumpAst
@@ -35,7 +34,7 @@ library
       , GHC.Hs.PlaceHolder             as PlaceHolder
       , GHC.Hs.Types                   as HsTypes
       , GHC.Hs.Utils                   as HsUtils
-      , GHC.Hs.Stats                   as HscStats
+--      , GHC.Hs.Stats                   as HscStats
 
       , GHC.Platform.ARM64             as CodeGen.Platform.ARM64
       , GHC.Platform.ARM               as CodeGen.Platform.ARM
@@ -125,23 +124,23 @@ library
       , GHC.HsToCore.PmCheck.Ppr       as PmPpr
       , GHC.HsToCore.PmCheck.Types     as PmTypes
 
-      , GHC.HsToCore                   as Desugar
-      , GHC.HsToCore.Coverage          as Coverage
-      , GHC.HsToCore.Arrows            as DsArrows
-      , GHC.HsToCore.Binds             as DsBinds
-      , GHC.HsToCore.ForeignCall       as DsCCall
-      , GHC.HsToCore.Expr              as DsExpr
-      , GHC.HsToCore.ForeignCallDecl   as DsForeign
-      , GHC.HsToCore.GuardedRHSs       as DsGRHSs
-      , GHC.HsToCore.ListComp          as DsListComp
-      , GHC.HsToCore.Splice            as DsMeta
-      , GHC.HsToCore.Monad             as DsMonad
-      , GHC.HsToCore.Usage             as DsUsage
-      , GHC.HsToCore.Utils             as DsUtils
-      , GHC.HsToCore.Docs              as ExtractDocs
-      , GHC.HsToCore.Match             as Match
-      , GHC.HsToCore.Match.Constructor as MatchCon
-      , GHC.HsToCore.Match.Literal     as MatchLit
+--       , GHC.HsToCore                   as Desugar
+--       , GHC.HsToCore.Coverage          as Coverage
+--       , GHC.HsToCore.Arrows            as DsArrows
+--       , GHC.HsToCore.Binds             as DsBinds
+--       , GHC.HsToCore.ForeignCall       as DsCCall
+--       , GHC.HsToCore.Expr              as DsExpr
+--       , GHC.HsToCore.ForeignCallDecl   as DsForeign
+--       , GHC.HsToCore.GuardedRHSs       as DsGRHSs
+--       , GHC.HsToCore.ListComp          as DsListComp
+--       , GHC.HsToCore.Splice            as DsMeta
+--       , GHC.HsToCore.Monad             as DsMonad
+--       , GHC.HsToCore.Usage             as DsUsage
+--       , GHC.HsToCore.Utils             as DsUtils
+--       , GHC.HsToCore.Docs              as ExtractDocs
+--       , GHC.HsToCore.Match             as Match
+--       , GHC.HsToCore.Match.Constructor as MatchCon
+--       , GHC.HsToCore.Match.Literal     as MatchLit
 
       , GHC.Stg.Pipeline               as SimplStg
       , GHC.Stg.CSE                    as StgCse
