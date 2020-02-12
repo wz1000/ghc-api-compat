@@ -31,7 +31,6 @@ library
       , GHC.Hs.Instances               as HsInstances
       , GHC.Hs.Lit                     as HsLit
       , GHC.Hs.Pat                     as HsPat
-      , GHC.Hs.PlaceHolder             as PlaceHolder
       , GHC.Hs.Types                   as HsTypes
       , GHC.Hs.Utils                   as HsUtils
 --      , GHC.Hs.Stats                   as HscStats
