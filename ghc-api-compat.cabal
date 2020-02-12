@@ -177,3 +177,21 @@ library
       , GHC.CoreToIface                as ToIface
 
       , GHC.Data.Bitmap                as Bitmap
+
+      , GHC.Runtime.Debugger           as Debugger
+      , GHC.Runtime.Interpreter        as GHCi
+      , GHC.Runtime.Linker             as Linker
+      , GHC.Runtime.Linker.Types       as LinkerTypes
+      , GHC.Runtime.Loader             as DynamicLoading
+      , GHC.Runtime.Eval               as InteractiveEval
+      , GHC.Runtime.Eval.Types         as InteractiveEvalTypes
+      , GHC.Runtime.Heap.Layout        as SMRep
+      , GHC.Runtime.Heap.Inspect       as RtClosureInspect
+
+      , GHC.ByteCode.Asm               as ByteCodeAsm
+      , GHC.ByteCode.Instr             as ByteCodeInstr
+      , GHC.ByteCode.InfoTable         as ByteCodeItbls
+      , GHC.ByteCode.Linker            as ByteCodeLink
+      , GHC.ByteCode.Types             as ByteCodeTypes
+
+      , GHC.CoreToByteCode             as ByteCodeGen
