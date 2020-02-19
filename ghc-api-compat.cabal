@@ -123,23 +123,23 @@ library
       , GHC.HsToCore.PmCheck.Ppr       as PmPpr
       , GHC.HsToCore.PmCheck.Types     as PmTypes
 
---       , GHC.HsToCore                   as Desugar
---       , GHC.HsToCore.Coverage          as Coverage
---       , GHC.HsToCore.Arrows            as DsArrows
---       , GHC.HsToCore.Binds             as DsBinds
---       , GHC.HsToCore.ForeignCall       as DsCCall
---       , GHC.HsToCore.Expr              as DsExpr
---       , GHC.HsToCore.ForeignCallDecl   as DsForeign
---       , GHC.HsToCore.GuardedRHSs       as DsGRHSs
---       , GHC.HsToCore.ListComp          as DsListComp
---       , GHC.HsToCore.Splice            as DsMeta
---       , GHC.HsToCore.Monad             as DsMonad
---       , GHC.HsToCore.Usage             as DsUsage
---       , GHC.HsToCore.Utils             as DsUtils
---       , GHC.HsToCore.Docs              as ExtractDocs
---       , GHC.HsToCore.Match             as Match
---       , GHC.HsToCore.Match.Constructor as MatchCon
---       , GHC.HsToCore.Match.Literal     as MatchLit
+      , GHC.HsToCore                   as Desugar
+      , GHC.HsToCore.Coverage          as Coverage
+      , GHC.HsToCore.Arrows            as DsArrows
+      , GHC.HsToCore.Binds             as DsBinds
+      , GHC.HsToCore.Foreign.Call      as DsCCall
+      , GHC.HsToCore.Foreign.Decl      as DsForeign
+      , GHC.HsToCore.Expr              as DsExpr
+      , GHC.HsToCore.GuardedRHSs       as DsGRHSs
+      , GHC.HsToCore.ListComp          as DsListComp
+      , GHC.HsToCore.Quote             as DsMeta
+      , GHC.HsToCore.Monad             as DsMonad
+      , GHC.HsToCore.Usage             as DsUsage
+      , GHC.HsToCore.Utils             as DsUtils
+      , GHC.HsToCore.Docs              as ExtractDocs
+      , GHC.HsToCore.Match             as Match
+      , GHC.HsToCore.Match.Constructor as MatchCon
+      , GHC.HsToCore.Match.Literal     as MatchLit
 
       , GHC.Stg.Pipeline               as SimplStg
       , GHC.Stg.CSE                    as StgCse
@@ -194,3 +194,16 @@ library
       , GHC.ByteCode.Types             as ByteCodeTypes
 
       , GHC.CoreToByteCode             as ByteCodeGen
+
+      , GHC.Llvm.MetaData              as Llvm.MetaData
+      , GHC.Llvm.Ppr                   as Llvm.PpLlvm
+      , GHC.Llvm.Types                 as Llvm.Types
+      , GHC.Llvm.Syntax                as Llvm.AbsSyn
+      , GHC.Llvm                       as Llvm
+      , GHC.CmmToLlvm                  as LlvmCodeGen
+      , GHC.CmmToLlvm.Mangler          as LlvmMangler
+      , GHC.CmmToLlvm.Base             as LlvmCodeGen.Base
+      , GHC.CmmToLlvm.CodeGen          as LlvmCodeGen.CodeGen
+      , GHC.CmmToLlvm.Data             as LlvmCodeGen.Data
+      , GHC.CmmToLlvm.Ppr              as LlvmCodeGen.Ppr
+      , GHC.CmmToLlvm.Regs             as LlvmCodeGen.Regs

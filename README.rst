@@ -5,3 +5,9 @@ We are in the process of `renaming GHC modules <https://gitlab.haskell.org/ghc/g
 
 This package aims to make the transition easier by mapping old module names to
 newer module names.
+
+Build with:
+
+.. code::
+
+   cabal new-build --with-compiler /path/to/ghc/HEAD/_build/stage1/bin/ghc
