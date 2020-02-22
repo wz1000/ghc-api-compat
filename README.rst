@@ -10,4 +10,4 @@ Build with:
 
 .. code::
 
-   cabal new-build --with-compiler /path/to/ghc/HEAD/_build/stage1/bin/ghc
+   cabal new-build -w /path/to/ghc/HEAD/_build/stage1/bin/ghc

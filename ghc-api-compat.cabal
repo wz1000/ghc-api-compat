@@ -207,3 +207,22 @@ library
       , GHC.CmmToLlvm.Data             as LlvmCodeGen.Data
       , GHC.CmmToLlvm.Ppr              as LlvmCodeGen.Ppr
       , GHC.CmmToLlvm.Regs             as LlvmCodeGen.Regs
+      , GHC.Driver.Backpack.Syntax     as BkpSyn
+      , GHC.Driver.Backpack            as DriverBkp
+      , GHC.Driver.CmdLine             as CmdLineParser
+      , GHC.Driver.CodeOutput          as CodeOutput
+      , GHC.Driver.Finder              as Finder
+      , GHC.Driver.MakeFile            as DriverMkDepend
+      , GHC.Driver.Main                as HscMain
+      , GHC.Driver.Make                as GhcMake
+      , GHC.Driver.Hooks               as Hooks
+      , GHC.Driver.Session             as DynFlags
+      , GHC.Driver.Packages            as Packages
+      , GHC.Driver.Phases              as DriverPhases
+      , GHC.Driver.Pipeline            as DriverPipeline
+      , GHC.Driver.Pipeline.Monad      as PipelineMonad
+      , GHC.Driver.Plugins             as Plugins
+      , GHC.Driver.Monad               as GhcMonad
+      , GHC.Driver.Types               as HscTypes
+      , GHC.Plugins                    as GhcPlugins
+      , GHC                            as GHC
