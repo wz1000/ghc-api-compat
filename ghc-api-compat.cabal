@@ -298,3 +298,19 @@ library
          , GHC.CmmToAsm.X86.Ppr                  as X86.Ppr
          , GHC.CmmToAsm.X86.RegInfo              as X86.RegInfo
          , GHC.CmmToAsm.X86.Regs                 as X86.Regs
+
+         , GHC.Core.Arity                        as CoreArity
+         , GHC.Core.FVs                          as CoreFVs
+         , GHC.Core.Map                          as CoreMap
+         , GHC.Core.SimpleOpt                    as CoreOpt
+         , GHC.Core.Seq                          as CoreSeq
+         , GHC.Core.Stats                        as CoreStats
+         , GHC.Core.Subst                        as CoreSubst
+         , GHC.Core                              as CoreSyn
+         , GHC.Core.Unfold                       as CoreUnfold
+         , GHC.Core.Utils                        as CoreUtils
+         , GHC.Core.Make                         as MkCore
+         , GHC.Core.Ppr                          as PprCore
+         , GHC.Core.Ppr.TyThing                  as PprTyThing
+         , GHC.Core.Rules                        as Rules
+         , GHC.Core.Lint                         as CoreLint
