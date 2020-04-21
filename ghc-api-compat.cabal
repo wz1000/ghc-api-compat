@@ -80,20 +80,52 @@ library
 
    if impl(ghc >= 8.11)
       reexported-modules:
-           GHC.Rename.Binds               as RnBinds
-         , GHC.Rename.Env                 as RnEnv
+           GHC.Rename.Env                 as RnEnv
          , GHC.Rename.Expr                as RnExpr
          , GHC.Rename.Fixity              as RnFixity
          , GHC.Rename.Doc                 as RnHsDoc
          , GHC.Rename.Names               as RnNames
          , GHC.Rename.Pat                 as RnPat
-         , GHC.Rename.Source              as RnSource
          , GHC.Rename.Splice              as RnSplice
-         , GHC.Rename.Types               as RnTypes
          , GHC.Rename.Unbound             as RnUnbound
          , GHC.Rename.Utils               as RnUtils
 
+         , GHC.Types.Avail                as Avail
+         , GHC.Types.Basic                as BasicTypes
+         , GHC.Types.Cpr                  as Cpr
+         , GHC.Types.Demand               as Demand
+         , GHC.Types.FieldLabel           as FieldLabel
+         , GHC.Types.Literal              as Literal
+         , GHC.Types.Module               as Module
          , GHC.Types.RepType              as RepType
+         , GHC.Types.SrcLoc               as SrcLoc
+         , GHC.Types.ForeignCall          as ForeignCall
+
+         , GHC.Types.Var                  as Var
+         , GHC.Types.Var.Set              as VarSet
+         , GHC.Types.Var.Env              as VarEnv
+
+         , GHC.Types.Id                   as Id
+         , GHC.Types.Id.Info              as IdInfo
+         , GHC.Types.Id.Make              as MkId
+
+         , GHC.Types.Name                 as Name
+         , GHC.Types.Name.Occurrence      as OccName
+         , GHC.Types.Name.Reader          as RdrName
+         , GHC.Types.Name.Set             as NameSet
+         , GHC.Types.Name.Shape           as NameShape
+         , GHC.Types.Name.Cache           as NameCache
+         , GHC.Types.Name.Env             as NameEnv
+
+         , GHC.Types.CostCentre           as CostCentre
+         , GHC.Types.CostCentre.State     as CostCentreState
+
+         , GHC.Types.Unique               as Unique
+         , GHC.Types.Unique.Supply        as UniqSupply
+         , GHC.Types.Unique.DFM           as UniqDFM
+         , GHC.Types.Unique.DSet          as UniqDSet
+         , GHC.Types.Unique.FM            as UniqFM
+         , GHC.Types.Unique.Set           as UniqSet
 
          , GHC.Cmm.BlockId                as BlockId
          , GHC.Cmm.CLabel                 as CLabel
@@ -172,7 +204,6 @@ library
          , GHC.Iface.Syntax               as IfaceSyn
          , GHC.Iface.Type                 as IfaceType
          , GHC.Iface.Load                 as LoadIface
-         , GHC.Iface.Utils                as MkIface
          , GHC.Iface.Rename               as RnModIface
          , GHC.Iface.Tidy                 as TidyPgm
 
@@ -318,3 +349,14 @@ library
          , GHC.Core.Ppr.TyThing                  as PprTyThing
          , GHC.Core.Rules                        as Rules
          , GHC.Core.Lint                         as CoreLint
+
+         , GHC.SysTools.BaseDir                  as SysTools.BaseDir
+         , GHC.SysTools.ExtraObj                 as SysTools.ExtraObj
+         , GHC.SysTools                          as SysTools
+         , GHC.SysTools.Info                     as SysTools.Info
+         , GHC.SysTools.Process                  as SysTools.Process
+         , GHC.SysTools.Tasks                    as SysTools.Tasks
+         , GHC.SysTools.Terminal                 as SysTools.Terminal
+         , GHC.SysTools.Ar                       as Ar
+         , GHC.SysTools.Elf                      as Elf
+         , GHC.SysTools.FileCleanup              as FileCleanup
